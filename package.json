@@ -1,0 +1,38 @@
+{
+  "name": "quantum-reviewer-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack",
+    "format:check": "prettier --check \"**/*.{js,mjs,cjs,ts,mts,cts,json,json5,jsonc,yml,yaml,md,mdx,html,css,scss,less,graphql,gql,toml}\" --cache --cache-location=node_modules/.cache/.prettiercache",
+    "format:fix": "prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,json,json5,jsonc,yml,yaml,md,mdx,html,css,scss,less,graphql,gql,toml}\" --cache --cache-location=node_modules/.cache/.prettiercache --log-level=warn",
+    "lint:check": "eslint --cache --cache-location=node_modules/.cache/.eslintcache",
+    "lint:fix": "eslint --fix --cache --cache-location=node_modules/.cache/.eslintcache",
+    "next:lint:check": "next lint --cache-location=node_modules/.cache/.eslintcache",
+    "next:lint:fix": "next lint --fix --cache-location=node_modules/.cache/.eslintcache",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.4",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "eslint": "^9.25.0",
+    "eslint-config-next": "15.3.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-multiline-arrays": "^4.0.3",
+    "prettier-plugin-packagejson": "^2.5.10",
+    "prettier-plugin-sort-json": "^4.1.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3"
+  }
+}
