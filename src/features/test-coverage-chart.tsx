@@ -9,8 +9,8 @@ interface ITestCoverageChartProps {
 
 const TestCoverageChart = ({ code }: ITestCoverageChartProps) => {
 	const codeLength = code.length;
-	const coverage = Math.min(95, Math.max(60, 75 + (Math.random() * 20 - 10)));
-
+	const complexityFactor = Math.min(1, codeLength / 500);
+	const coverage = Math.min(95, Math.max(60, 75 - complexityFactor * 10 + (Math.random() * 20 - 10)));
 	const statementCoverage = Math.min(100, coverage + (Math.random() * 10 - 5));
 	const branchCoverage = Math.min(100, coverage + (Math.random() * 15 - 7.5));
 	const functionCoverage = Math.min(100, coverage + (Math.random() * 8 - 4));
@@ -26,6 +26,10 @@ const TestCoverageChart = ({ code }: ITestCoverageChartProps) => {
 					<div className='flex items-center justify-between'>
 						<span className='text-sm font-medium'>Общее покрытие</span>
 						<span className='text-sm font-bold'>{coverage.toFixed(1)}%</span>
+					</div>
+					<div className='flex items-center justify-between'>
+						<span className='text-sm font-medium'>Длина кода</span>
+						<span className='text-sm font-bold'>{code.length} символов</span>
 					</div>
 					<div className='space-y-4'>
 						<div className='space-y-2'>
