@@ -1,11 +1,11 @@
 'use client';
 
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, type UseMutationResult } from '@tanstack/react-query';
 import type { IReviewRequest, IReviewResult } from '../types';
 import { useReviewStore } from '@entities/review/store';
 import { getMockReviewResult } from '@entities/review/api';
 
-const useReviewCode = () => {
+const useReviewCode = (): UseMutationResult<IReviewResult, Error, IReviewRequest> => {
 	const { useMockData } = useReviewStore();
 
 	return useMutation({
